@@ -27,7 +27,7 @@ def test_ebay():
         item_name = item.text
         print(item_name)
 
-   """ item_price_list = driver.find_elements(By.XPATH,"//span[@class='s-item__price']")
+    item_price_list = driver.find_elements(By.XPATH,"//span[@class='s-item__price']")
 
     total = []
     for price in item_price_list:
@@ -36,21 +36,11 @@ def test_ebay():
         x = item_price.replace("$", " ").strip()
         total.append(x)
 
+    #print(total)
     total.sort()
-    print(f"cheapest price is {total[1]}")"""
+    min_price = total[1]
+    print("Cheapest price is: "+min_price)
+    #print(f"cheapest price is {total[1]}")
 
-    product_price_element_list = driver.find_elements(By.XPATH, "//span[@class='s-item__price']")
-    prize = []
-    for price in product_price_element_list:
-        product_price = price.text
-        print(product_price)
-        x = product_price.replace("$", " ").strip()
-        prize.append(x)
-
-    prize.sort()
-
-    #min_price = prize[1]
-    print(f"cheapest price is {prize[1]}")
-
-    time.sleep(5)
+    #time.sleep(5)
 
